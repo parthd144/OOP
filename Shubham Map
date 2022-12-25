@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+#include<map>
+
+int main(){
+  map<string,int> state;
+
+  state.insert(pair<string, int>("Maharashtra",9999999));
+  state.insert(pair<string, int>("Karnataka",9934999));
+  state.insert(pair<string, int>("Goa",99879999));
+  state.insert(pair<string, int>("Gujurat",99673999));
+  state.insert(pair<string, int>("Himachal",9912399));
+
+  int flag=0;
+  string search;
+  cout<<"enter the state:"<<endl;
+  
+
+  cin>>search;
+  
+  map<string,int> :: iterator i;
+  for(i=state.begin();i!=state.end();i++){
+    
+    if(search==i->first){
+      flag++;
+      
+      cout<<"The population of "<<i->first<<" is "<<i->second;
+    
+    }
+    
+
+  }
+  if(flag==0){
+      cout<<"state not found"<<endl;
+    }
+  return 0;
+}
